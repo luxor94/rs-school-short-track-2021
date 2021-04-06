@@ -8,4 +8,5 @@ describe('07-file-names', () => {
     assert.deepEqual(renameFiles(['a', 'b', 'cd', 'b ', 'a(3)']), ['a', 'b', 'cd', 'b ', 'a(3)']);
     assert.deepEqual(renameFiles([]), []);
   });
+  
 });
