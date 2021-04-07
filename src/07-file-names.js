@@ -15,12 +15,15 @@
  */
 function renameFiles(names) {
   const arr = [];
-  names.reduce((a, b) => {
-    if (a.indexOf(b) < 0) {
-      arr.push(b);
+  let j = 1;
+  for (let i = 0; i < names.length; i++) {
+    if (arr.includes(names[i]) === true) {
+      arr.push(`${names[i]}(${j})`);
+      j++;
+    } else {
+      arr.push(names[i]);
     }
-    return a;
-  }, []);
+  }
   return arr;
 }
 
