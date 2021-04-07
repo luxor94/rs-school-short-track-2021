@@ -9,12 +9,6 @@
  *
  */
 function encodeLine(str) {
-  let arr = str.split('');
-  const result = [];
-  for (let i = 0; i < str.length; i++) {
-    let sum = 0;
-    if (arr[i] == arr[i+1])
-  }
+  return str;
 }
-
 module.exports = encodeLine;
