@@ -14,17 +14,14 @@
  *
  */
 function renameFiles(names) {
-  const arr = [];
-  let j = 1;
   for (let i = 0; i < names.length; i++) {
-    if (arr.includes(names[i]) === true) {
-      arr.push(`${names[i]}(${j})`);
-      j++;
-    } else {
-      arr.push(names[i]);
+    if (names.indexOf(names[i])) {
+      return names;
     }
+    const arr = [];
+    return arr;
   }
-  return arr;
+  return 'test';
 }
 
 module.exports = renameFiles;
