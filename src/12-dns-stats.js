@@ -40,7 +40,6 @@ function getDNSStats(domains) {
   for (let i = 1; i < 3; i++) {
     result[`${Object.keys(result)[i]}${Object.keys(result)[i - 1]}`] = result[Object.keys(result)[i]];
     delete result[Object.keys(result)[i]];
-    result[``] = result[Object.keys(result)[i]];
   }
 
   return result;
