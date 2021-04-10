@@ -7,17 +7,26 @@
  * @return {List}
  *
  * @example
- * For l = [3, 1, 2, 3, 4, 5] and l = 3,
- * the output should be [1, 2, 4, 5]
- *
- * Singly - linked lists are already defined with this interface
- * function ListNode(x) {
- *   this.value = x;
- *   this.next = null;
- * }
- */
+  * For l = [3, 1, 2, 3, 4, 5] and l = 3,
+  * the output should be [1, 2, 4, 5]
+  *
+  * Singly - linked lists are already defined with this interface
+  * function ListNode(x) {
+  *   this.value = x;
+  *   this.next = null;
+  * }
+  */
 
-function removeKFromList(l) {
+function removeKFromList(l, k) {
+  let list = l;
+
+  while (list.next) {
+    if (list.value === k) {
+      list.value = list.next.value;
+      list.next = list.next.next;
+    }
+    list = list.next;
+  }
   return l;
 }
 

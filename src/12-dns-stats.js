@@ -22,7 +22,6 @@
  */
 function getDNSStats(domains) {
   const arr = domains.map((el) => el.split('.').reverse().join('.')).join('.').split('.');
-  // const l = arr.reduce((a, b) => a.length >= b.length ? a : b);
   const result = {};
 
   for (let i = 0; i < arr.length; i++) {
@@ -34,6 +33,14 @@ function getDNSStats(domains) {
         result[`.${arr[i]}`] = sum;
       }
     }
+  }
+
+  // const size = Object.keys(result).length;
+
+  for (let i = 1; i < 3; i++) {
+    result[`${Object.keys(result)[i]}${Object.keys(result)[i - 1]}`] = result[Object.keys(result)[i]];
+    delete result[Object.keys(result)[i]];
+    result[``] = result[Object.keys(result)[i]];
   }
 
   return result;
